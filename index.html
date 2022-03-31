@@ -14,9 +14,9 @@
         console.log('$%^ window.top', window.top);
         console.log('$%^ window.parent', window.parent);
         window.addEventListener('message', (e) => console.log('$%^ message', e));
-        window.parent.postMessage('{name: "message?.name1", requestId: "message?.requestId", data: "message?.data"}', 'http://localhost:8080/');
-        window.parent.postMessage('{name: "get_space_ids", requestId: "123123"}', 'http://localhost:8080/');
-        window.parent.postMessage('{name: "message?.name2", requestId: "message?.requestId", data: "message?.data"}', '*');
+        window.parent.postMessage(JSON.stringify({name: "message?.name1", requestId: "message1?.requestId", data: "message?.data"}), 'http://localhost:8080/');
+        window.parent.postMessage(JSON.stringify({name: "get_space_ids", requestId: "123123"}), 'http://localhost:8080/');
+        window.parent.postMessage(JSON.stringify({name: "message?.name2", requestId: "message2?.requestId", data: "message?.data"}), '*');
     </script>
 </body>
 </html>

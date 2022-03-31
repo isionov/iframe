@@ -12,6 +12,8 @@
         console.log('$%^ window.opener', window.opener);
         console.log('$%^ window.top', window.top);
         console.log('$%^ window.parent', window.parent);
+        window.addEventListener('message', (e) => console.log('$%^ message', e));
+        window.parent.postMessage('{name: "message?.name", requestId: "message?.requestId", data: "message?.data"}', 'http://localhost:8080/');
     </script>
 </body>
 </html>

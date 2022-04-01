@@ -55,6 +55,7 @@
         window.addEventListener('message', (e) => {
             const data = e.data;
             const name = JSON.parse(data).name;
+            console.log('$%^ e', e);
 
             document.getElementById(name).innerText = data;
         });
@@ -84,10 +85,10 @@
                 if(!input.value) {
                     alert("Please, enter 'Parent origin' field", );
                 } else {
+                    console.log('$%^ serializedRequest, input.value', serializedRequest, input.value);
                     window.parent.postMessage(serializedRequest, input.value);
                 }
             })
-
         }
 
         getSpaceIds()
